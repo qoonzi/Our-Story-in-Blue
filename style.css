@@ -1,0 +1,1731 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #071426;
+  color: #14263b;
+  font-family: "Patrick Hand", cursive;
+  overflow-x: hidden;
+}
+
+
+/* =================================
+   COLORS
+================================= */
+
+:root {
+
+  --navy: #071426;
+  --navy-light: #10233b;
+  --paper: #e9edf0;
+  --paper-dark: #d8dfe4;
+
+  --ink: #172b42;
+  --blue: #315c82;
+  --blue-light: #7598b5;
+
+  --white: #f7f8f7;
+
+}
+
+
+/* =================================
+   MUSIC
+================================= */
+
+.music-btn {
+
+  position: fixed;
+
+  right: 20px;
+  top: 20px;
+
+  width: 45px;
+  height: 45px;
+
+  border: 1px solid #7598b5;
+
+  border-radius: 50%;
+
+  background: #10233b;
+
+  color: #dce8f1;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  z-index: 999;
+
+  transition: .3s;
+}
+
+.music-btn:hover {
+
+  transform: rotate(10deg) scale(1.1);
+
+  background: #1a3553;
+}
+
+
+/* =================================
+   DOODLES
+================================= */
+
+.doodles {
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: 1;
+}
+
+.doodle {
+
+  position: absolute;
+
+  color: rgba(160, 190, 215, .25);
+
+  font-family: "Caveat", cursive;
+
+}
+
+.star {
+  font-size: 30px;
+}
+
+.star1 {
+  top: 12%;
+  left: 7%;
+}
+
+.star2 {
+  top: 75%;
+  left: 5%;
+}
+
+.star3 {
+  top: 25%;
+  right: 8%;
+}
+
+.heart {
+  font-size: 45px;
+}
+
+.heart1 {
+  top: 55%;
+  right: 7%;
+}
+
+.heart2 {
+  top: 85%;
+  right: 15%;
+}
+
+.moon {
+
+  top: 8%;
+  right: 20%;
+
+  font-size: 65px;
+
+}
+
+.spark {
+  font-size: 35px;
+}
+
+.spark1 {
+  left: 20%;
+  top: 30%;
+}
+
+.spark2 {
+  right: 25%;
+  top: 70%;
+}
+
+
+/* =================================
+   COVER
+================================= */
+
+.cover {
+
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #102b49,
+      #071426 70%
+    );
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 35px 20px;
+
+  position: relative;
+}
+
+
+/* PAPER */
+
+.cover-paper {
+
+  position: relative;
+
+  width: min(720px, 94vw);
+
+  min-height: 720px;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(40,70,95,.05) 0px,
+      rgba(40,70,95,.05) 1px,
+      transparent 1px,
+      transparent 31px
+    ),
+    var(--paper);
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,.45);
+
+  padding: 80px 70px;
+
+  overflow: hidden;
+
+  transform: rotate(-.4deg);
+
+}
+
+
+/* PAPER EDGE */
+
+.cover-paper::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border:
+    1px solid rgba(30,50,70,.15);
+
+  pointer-events: none;
+
+}
+
+
+/* SPIRAL */
+
+.spiral {
+
+  position: absolute;
+
+  left: 18px;
+
+  top: 0;
+
+  bottom: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-around;
+
+}
+
+.spiral span {
+
+  width: 35px;
+
+  height: 14px;
+
+  border:
+    3px solid #526779;
+
+  border-left: none;
+
+  border-radius:
+    0 50% 50% 0;
+
+  opacity: .8;
+
+}
+
+
+/* COVER CONTENT */
+
+.cover-content {
+
+  position: relative;
+
+  z-index: 3;
+
+  text-align: center;
+
+  max-width: 550px;
+
+  margin: auto;
+
+}
+
+.tiny-note {
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: #50687e;
+
+}
+
+.doodle-line {
+
+  margin: 20px 0;
+
+  color: #7598b5;
+
+  font-size: 20px;
+
+}
+
+.cover h1 {
+
+  font-family: "Caveat", cursive;
+
+  font-size: clamp(75px, 13vw, 120px);
+
+  font-weight: 500;
+
+  line-height: .7;
+
+  color: #112941;
+
+}
+
+.cover h1 span {
+
+  display: block;
+
+  color: #315c82;
+
+  font-size: 1.05em;
+
+}
+
+.cover-subtitle {
+
+  font-family: "DM Mono", monospace;
+
+  text-transform: uppercase;
+
+  letter-spacing: 4px;
+
+  font-size: 10px;
+
+  color: #59738c;
+
+  margin-top: 30px;
+
+}
+
+
+/* COVER DRAWING */
+
+.cover-drawing {
+
+  position: relative;
+
+  width: 250px;
+
+  height: 150px;
+
+  margin: 45px auto 20px;
+
+}
+
+.sun {
+
+  position: absolute;
+
+  right: 30px;
+
+  top: 5px;
+
+  font-size: 45px;
+
+  color: #526f8a;
+
+}
+
+.tiny-house {
+
+  position: absolute;
+
+  left: 85px;
+
+  top: 55px;
+
+  width: 80px;
+
+  height: 55px;
+
+  border:
+    3px solid #315c82;
+
+  font-size: 32px;
+
+  color: #315c82;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.tiny-house::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 55px;
+
+  height: 55px;
+
+  border-top:
+    3px solid #315c82;
+
+  border-left:
+    3px solid #315c82;
+
+  transform:
+    rotate(45deg);
+
+  top: -31px;
+
+}
+
+.ground {
+
+  position: absolute;
+
+  bottom: 20px;
+
+  left: 15px;
+
+  right: 15px;
+
+  font-size: 24px;
+
+  color: #5b7892;
+
+}
+
+.cover-date {
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  color: #687d90;
+
+}
+
+
+/* START */
+
+.start-btn {
+
+  margin-top: 40px;
+
+  border:
+
+    1px solid #526f8a;
+
+  background: transparent;
+
+  padding: 13px 25px;
+
+  color: #17304b;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition: .3s;
+
+}
+
+.start-btn b {
+
+  margin-left: 15px;
+
+  font-size: 15px;
+
+}
+
+.start-btn:hover {
+
+  background: #17304b;
+
+  color: white;
+
+  transform: translateY(-3px);
+
+}
+
+.hand-note {
+
+  margin-top: 20px;
+
+  color: #718597;
+
+  font-size: 14px;
+
+  transform: rotate(-2deg);
+
+}
+
+
+/* CORNER */
+
+.corner-note {
+
+  position: absolute;
+
+  right: 25px;
+
+  bottom: 20px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  color: #7c8e9e;
+
+}
+
+.page-lines {
+
+  position: absolute;
+
+  left: 55px;
+
+  right: 20px;
+
+  bottom: 50px;
+
+  height: 1px;
+
+  background: #aab8c3;
+
+  opacity: .5;
+
+}
+
+
+/* =================================
+   BOOK
+================================= */
+
+.hidden {
+  display: none;
+}
+
+.book {
+
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #102844,
+      #061221
+    );
+
+  padding: 50px 20px 120px;
+
+  position: relative;
+
+}
+
+
+/* =================================
+   PAGE
+================================= */
+
+.page {
+
+  display: none;
+
+  position: relative;
+
+  max-width: 760px;
+
+  min-height: 850px;
+
+  margin: auto;
+
+  padding: 75px 80px;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(40,70,95,.045) 0px,
+      rgba(40,70,95,.045) 1px,
+      transparent 1px,
+      transparent 31px
+    ),
+    #e8ecee;
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.45);
+
+  overflow: hidden;
+
+  animation: pageIn .7s ease;
+
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes pageIn {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateX(30px)
+      rotate(1deg);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      rotate(0);
+
+  }
+
+}
+
+
+/* PAGE CORNERS */
+
+.page::after {
+
+  content: "";
+
+  position: absolute;
+
+  bottom: -30px;
+
+  right: -30px;
+
+  width: 100px;
+
+  height: 100px;
+
+  border-radius: 50%;
+
+  border:
+    2px solid rgba(50,80,105,.15);
+
+}
+
+
+/* PAGE NUMBER */
+
+.page-number {
+
+  position: absolute;
+
+  right: 30px;
+
+  top: 25px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  color: #718394;
+
+}
+
+
+/* =================================
+   PAGE CONTENT
+================================= */
+
+.page-content {
+
+  position: relative;
+
+  z-index: 2;
+
+}
+
+.hand-small {
+
+  font-size: 15px;
+
+  color: #60788e;
+
+  transform: rotate(-2deg);
+
+  margin-bottom: 15px;
+}
+
+.page h2 {
+
+  font-family: "Caveat", cursive;
+
+  font-size: clamp(55px, 8vw, 75px);
+
+  font-weight: 500;
+
+  line-height: .85;
+
+  color: #152c45;
+
+}
+
+.page h2 span {
+
+  color: #315c82;
+
+  display: inline-block;
+
+  transform: rotate(-2deg);
+
+}
+
+.scribble {
+
+  color: #7090a8;
+
+  font-family: monospace;
+
+  margin: 25px 0;
+
+}
+
+
+/* =================================
+   POLAROID
+================================= */
+
+.polaroid {
+
+  position: relative;
+
+  width: 290px;
+
+  padding: 12px 12px 35px;
+
+  background: #f4f4ef;
+
+  box-shadow:
+    0 10px 25px rgba(20,35,50,.2);
+
+}
+
+.rotate-left {
+
+  transform: rotate(-3deg);
+
+  margin: 35px 0 25px 30px;
+
+}
+
+.photo-wrapper {
+
+  width: 100%;
+
+  height: 260px;
+
+  overflow: hidden;
+
+  background: #cbd2d6;
+
+}
+
+.photo-wrapper img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    saturate(.7)
+    contrast(.95)
+    sepia(.08);
+
+}
+
+.polaroid p {
+
+  position: absolute;
+
+  bottom: 7px;
+
+  left: 0;
+
+  right: 0;
+
+  text-align: center;
+
+  font-family: "Caveat", cursive;
+
+  font-size: 22px;
+
+  color: #344e66;
+
+}
+
+
+/* =================================
+   STORY TEXT
+================================= */
+
+.story-text {
+
+  max-width: 520px;
+
+  margin-left: auto;
+
+  margin-right: 15px;
+
+  margin-top: -30px;
+
+}
+
+.story-text p {
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  color: #344b61;
+
+  margin-bottom: 15px;
+
+}
+
+.highlight {
+
+  color: #315c82 !important;
+
+  font-size: 22px !important;
+
+  transform: rotate(-1deg);
+
+}
+
+
+/* =================================
+   LITTLE NOTE
+================================= */
+
+.little-doodle {
+
+  margin-top: 35px;
+
+  color: #5e778d;
+
+  font-size: 15px;
+
+}
+
+.little-doodle span {
+
+  margin-left: 8px;
+
+}
+
+
+/* =================================
+   MEMORY LIST
+================================= */
+
+.memory-list {
+
+  margin-top: 55px;
+
+}
+
+.memory-item {
+
+  display: flex;
+
+  gap: 25px;
+
+  margin-bottom: 42px;
+
+  padding-bottom: 20px;
+
+  border-bottom:
+    1px dashed #9aaab7;
+
+}
+
+.number {
+
+  font-family: "DM Mono", monospace;
+
+  color: #55738e;
+
+  font-size: 13px;
+
+}
+
+.memory-item h3 {
+
+  font-family: "Caveat", cursive;
+
+  font-size: 29px;
+
+  color: #19334d;
+
+  font-weight: 500;
+
+}
+
+.memory-item p {
+
+  max-width: 500px;
+
+  font-size: 17px;
+
+  line-height: 1.6;
+
+  color: #4c6173;
+
+  margin-top: 5px;
+
+}
+
+.star-note {
+
+  margin-top: 45px;
+
+  font-size: 30px;
+
+  color: #315c82;
+
+}
+
+.star-note span {
+
+  font-size: 17px;
+
+  color: #61788b;
+
+  margin-left: 10px;
+
+}
+
+
+/* =================================
+   PHOTO BOARD
+================================= */
+
+.photo-board {
+
+  position: relative;
+
+  height: 430px;
+
+  margin-top: 35px;
+
+}
+
+.small-photo {
+
+  position: absolute;
+
+  width: 245px;
+
+}
+
+.small-photo .photo-wrapper {
+
+  height: 220px;
+
+}
+
+.photo-a {
+
+  left: 30px;
+
+  top: 20px;
+
+  transform: rotate(-5deg);
+
+}
+
+.photo-b {
+
+  right: 30px;
+
+  top: 80px;
+
+  transform: rotate(5deg);
+
+}
+
+.center-note {
+
+  position: absolute;
+
+  bottom: 20px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(-2deg);
+
+  text-align: center;
+
+  width: 300px;
+
+}
+
+.center-note span {
+
+  font-size: 35px;
+
+  color: #315c82;
+
+}
+
+.center-note p {
+
+  font-size: 21px;
+
+  color: #3f586e;
+
+}
+
+
+/* =================================
+   CALENDAR
+================================= */
+
+.calendar-doodle {
+
+  width: 330px;
+
+  margin: 45px auto 35px;
+
+  border:
+    2px solid #536e85;
+
+  transform: rotate(-2deg);
+
+  position: relative;
+
+}
+
+.calendar-top {
+
+  padding: 10px;
+
+  background: #294963;
+
+  color: white;
+
+  font-family: "DM Mono", monospace;
+
+  text-align: center;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+}
+
+.calendar-number {
+
+  text-align: center;
+
+  font-family: "Caveat", cursive;
+
+  font-size: 110px;
+
+  line-height: 1;
+
+  color: #1b3852;
+
+  padding-top: 15px;
+
+}
+
+.calendar-note {
+
+  text-align: center;
+
+  padding: 15px;
+
+  border-top:
+    1px dashed #8095a5;
+
+  font-size: 15px;
+
+  color: #5d7385;
+
+}
+
+.calendar-note span {
+
+  color: #315c82;
+
+  font-size: 25px;
+
+  margin-right: 8px;
+
+}
+
+.month-text {
+
+  max-width: 540px;
+
+  margin: auto;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  color: #42586c;
+
+}
+
+.month-text p {
+
+  margin-bottom: 15px;
+
+}
+
+.blue-highlight {
+
+  font-family: "Caveat", cursive;
+
+  color: #315c82;
+
+  font-size: 27px;
+
+  transform: rotate(-1deg);
+
+}
+
+.tiny-doodle {
+
+  text-align: center;
+
+  margin-top: 30px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 30px;
+
+  color: #597890;
+
+  font-size: 28px;
+
+}
+
+
+/* =================================
+   LETTER
+================================= */
+
+.letter-page {
+
+  padding-bottom: 100px;
+
+}
+
+.letter-paper {
+
+  margin-top: 35px;
+
+  padding: 35px 40px;
+
+  border-left:
+    1px solid #9eacb7;
+
+  border-right:
+    1px solid #9eacb7;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 30px,
+      rgba(90,120,145,.18) 31px
+    );
+
+}
+
+.letter-paper p {
+
+  font-size: 17px;
+
+  line-height: 1.85;
+
+  color: #40566a;
+
+  margin-bottom: 17px;
+
+}
+
+.letter-paper p:first-child {
+
+  font-family: "Caveat", cursive;
+
+  font-size: 30px;
+
+  color: #244866;
+
+}
+
+.letter-highlight {
+
+  font-family: "Caveat", cursive;
+
+  font-size: 27px !important;
+
+  color: #315c82 !important;
+
+  text-align: center;
+
+  margin: 30px 0 !important;
+
+}
+
+.signature {
+
+  text-align: right;
+
+  margin-top: 30px;
+
+}
+
+.signature span {
+
+  font-family: "Caveat", cursive;
+
+  font-size: 32px;
+
+  color: #315c82;
+
+}
+
+
+/* =================================
+   FINAL PAGE
+================================= */
+
+.final-page {
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(40,70,95,.05) 0,
+      rgba(40,70,95,.05) 1px,
+      transparent 1px,
+      transparent 31px
+    ),
+    #e6eaec;
+
+}
+
+.final-content {
+
+  text-align: center;
+
+  padding-top: 70px;
+
+}
+
+.big-heart {
+
+  font-size: 100px;
+
+  color: #315c82;
+
+  font-family: "Caveat", cursive;
+
+  animation:
+    heartbeat 1.7s infinite;
+
+}
+
+@keyframes heartbeat {
+
+  50% {
+
+    transform:
+      scale(1.12)
+      rotate(-3deg);
+
+  }
+
+}
+
+.final-page h2 {
+
+  font-size: clamp(55px, 8vw, 80px);
+
+  margin-top: 10px;
+
+}
+
+.final-text {
+
+  max-width: 480px;
+
+  margin: 30px auto;
+
+  font-size: 20px;
+
+  line-height: 1.6;
+
+  color: #4b6173;
+
+}
+
+.yes-btn {
+
+  padding: 14px 30px;
+
+  background: #183650;
+
+  border: none;
+
+  color: white;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition: .3s;
+
+}
+
+.yes-btn:hover {
+
+  transform:
+    translateY(-4px)
+    rotate(-2deg);
+
+  box-shadow:
+    5px 7px 0 #7598b5;
+
+}
+
+.final-message {
+
+  display: none;
+
+  margin-top: 35px;
+
+  animation: messageIn 1s ease;
+
+}
+
+.final-message.show {
+
+  display: block;
+
+}
+
+.heart-burst {
+
+  color: #315c82;
+
+  font-size: 30px;
+
+  letter-spacing: 15px;
+
+}
+
+.final-message p {
+
+  font-family: "Caveat", cursive;
+
+  font-size: 32px;
+
+  color: #23425d;
+
+}
+
+.final-message > span {
+
+  display: block;
+
+  margin-top: 10px;
+
+  color: #62798b;
+
+  font-size: 15px;
+
+}
+
+@keyframes messageIn {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+.signature-bottom {
+
+  margin-top: 70px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  color: #718596;
+
+}
+
+.signature-bottom span {
+
+  font-size: 18px;
+
+}
+
+
+/* =================================
+   NAVIGATION
+================================= */
+
+.navigation {
+
+  position: fixed;
+
+  bottom: 25px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: min(680px, 90vw);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  z-index: 100;
+
+}
+
+.navigation button {
+
+  background: #102943;
+
+  border:
+    1px solid #5d7890;
+
+  color: #dce6ed;
+
+  padding: 10px 17px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  transition: .3s;
+
+}
+
+.navigation button:hover {
+
+  background: #294963;
+
+}
+
+.navigation button:disabled {
+
+  opacity: .3;
+
+  cursor: default;
+
+}
+
+.page-dots {
+
+  display: flex;
+
+  gap: 7px;
+
+}
+
+.dot {
+
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #70899d;
+
+  opacity: .4;
+
+}
+
+.dot.active {
+
+  opacity: 1;
+
+  background: #d7e3eb;
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 700px) {
+
+  .cover {
+
+    padding: 20px 12px;
+
+  }
+
+  .cover-paper {
+
+    min-height: 680px;
+
+    padding:
+      70px 35px;
+
+  }
+
+  .cover h1 {
+
+    font-size: 75px;
+
+  }
+
+  .spiral {
+
+    left: 8px;
+
+  }
+
+  .spiral span {
+
+    width: 23px;
+
+  }
+
+  .page {
+
+    min-height: 850px;
+
+    padding:
+      65px 28px 110px;
+
+  }
+
+  .page h2 {
+
+    font-size: 57px;
+
+  }
+
+  .polaroid {
+
+    width: 245px;
+
+  }
+
+  .photo-wrapper {
+
+    height: 220px;
+
+  }
+
+  .rotate-left {
+
+    margin-left: 10px;
+
+  }
+
+  .story-text {
+
+    margin-top: 15px;
+
+  }
+
+  .story-text p {
+
+    font-size: 17px;
+
+  }
+
+  .photo-board {
+
+    height: 500px;
+
+  }
+
+  .small-photo {
+
+    width: 210px;
+
+  }
+
+  .small-photo .photo-wrapper {
+
+    height: 190px;
+
+  }
+
+  .photo-a {
+
+    left: 0;
+
+  }
+
+  .photo-b {
+
+    right: 0;
+
+    top: 180px;
+
+  }
+
+  .center-note {
+
+    bottom: 0;
+
+  }
+
+  .calendar-doodle {
+
+    width: 270px;
+
+  }
+
+  .calendar-number {
+
+    font-size: 90px;
+
+  }
+
+  .letter-paper {
+
+    padding: 25px 20px;
+
+  }
+
+  .letter-paper p {
+
+    font-size: 16px;
+
+  }
+
+  .navigation {
+
+    bottom: 12px;
+
+  }
+
+  .navigation button {
+
+    padding: 9px 12px;
+
+  }
+
+  .dot {
+
+    width: 5px;
+
+    height: 5px;
+
+  }
+
+  .music-btn {
+
+    width: 40px;
+
+    height: 40px;
+
+    right: 12px;
+
+    top: 12px;
+
+  }
+
+}

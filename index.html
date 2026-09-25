@@ -1,0 +1,690 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Little Sketchbook ♡</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =================================
+       MUSIC
+  ================================== -->
+
+  <audio id="music" loop>
+    <source src="love.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="musicBtn" class="music-btn" onclick="toggleMusic()">
+    ♫
+  </button>
+
+
+  <!-- =================================
+       DOODLE BACKGROUND
+  ================================== -->
+
+  <div class="doodles">
+
+    <span class="doodle star star1">✦</span>
+    <span class="doodle star star2">✧</span>
+    <span class="doodle star star3">✦</span>
+
+    <span class="doodle heart heart1">♡</span>
+    <span class="doodle heart heart2">♡</span>
+
+    <span class="doodle moon">☾</span>
+
+    <span class="doodle spark spark1">+</span>
+    <span class="doodle spark spark2">×</span>
+
+  </div>
+
+
+
+  <!-- =================================
+       COVER
+  ================================== -->
+
+  <section id="cover" class="cover">
+
+    <div class="cover-paper">
+
+      <div class="spiral">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </div>
+
+
+      <div class="cover-content">
+
+        <p class="tiny-note">
+          ✎ my little sketchbook
+        </p>
+
+        <div class="doodle-line">
+          ───── ♡ ─────
+        </div>
+
+        <h1>
+        Our
+          <span>Little</span>
+           Story
+</h1>
+
+<p class="cover-subtitle">
+  Ana & Fadlan 
+</p>
+
+        <p class="cover-subtitle">
+          one month of us
+        </p>
+
+
+        <div class="cover-drawing">
+
+          <span class="sun">☼</span>
+
+          <div class="tiny-house">
+            ♡
+          </div>
+
+          <div class="ground">
+            ─────────────
+          </div>
+
+        </div>
+
+
+        <p class="cover-date">
+          26 . 08 . 2026
+        </p>
+
+
+        <button class="start-btn" onclick="startBook()">
+
+          <span>open our story</span>
+
+          <b>→</b>
+
+        </button>
+
+
+        <p class="hand-note">
+          * please read until the last page :)
+        </p>
+
+      </div>
+
+
+      <div class="corner-note">
+        no. 01
+      </div>
+
+      <div class="page-lines"></div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =================================
+       BOOK
+  ================================== -->
+
+  <main id="book" class="book hidden">
+
+
+    <!-- PAGE 1 -->
+    <section class="page active" data-page="0">
+
+      <div class="page-number">
+        01 / 06
+      </div>
+
+      <div class="page-content">
+
+        <p class="hand-small">
+          page one · the beginning
+        </p>
+
+        <h2>
+          How it all<br>
+          <span>started...</span>
+        </h2>
+
+        <div class="scribble">
+          ~ ~ ~ ~ ~ ~ ~
+        </div>
+
+
+        <div class="polaroid rotate-left">
+
+          <div class="photo-wrapper">
+
+            <img
+              src="kiss.jpg"
+              alt="Our first memory"
+            >
+
+          </div>
+
+          <p>
+            the beginning ♡
+          </p>
+
+        </div>
+
+
+        <div class="tape tape-one"></div>
+
+
+        <div class="story-text">
+
+          <p>
+            Out of all the people I could have met,
+            somehow, I ended up finding
+            you.
+          </p>
+
+          <p>
+            And I don't know if it was fate,
+            luck, or just a coincidence.
+          </p>
+
+          <p class="highlight">
+            "maybe meeting you wasn't an accident."
+          </p>
+
+        </div>
+
+
+        <div class="little-doodle">
+          ✎ <span>keep this memory</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PAGE 2 -->
+    <section class="page" data-page="1">
+
+      <div class="page-number">
+        02 / 06
+      </div>
+
+      <div class="page-content">
+
+        <p class="hand-small">
+          page two · little things
+        </p>
+
+        <h2>
+          Things I<br>
+          <span>remember</span>
+        </h2>
+
+
+        <div class="memory-list">
+
+          <div class="memory-item">
+
+            <span class="number">
+              01
+            </span>
+
+            <div>
+              <h3>
+                our conversations
+              </h3>
+
+              <p>
+                I remember the way you talk,
+                the way you laugh, and the way
+                you make me feel like I'm the
+                only one in the world.  
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="memory-item">
+
+            <span class="number">
+              02
+            </span>
+
+            <div>
+              <h3>
+                your little habits
+              </h3>
+
+              <p>
+                The little things you do—
+                even the ones you might not
+                realize—slowly become something
+                I know by heart.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="memory-item">
+
+            <span class="number">
+              03
+            </span>
+
+            <div>
+              <h3>
+                the way you make me smile
+              </h3>
+
+              <p>
+                Sometimes you don't even have
+                to try. You just do.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="star-note">
+          ★
+          <span>
+            these little things mean a lot
+          </span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PAGE 3 -->
+    <section class="page" data-page="2">
+
+      <div class="page-number">
+        03 / 06
+      </div>
+
+      <div class="page-content">
+
+        <p class="hand-small">
+          page three · memories
+        </p>
+
+        <h2>
+          A few little<br>
+          <span>moments</span>
+        </h2>
+
+
+        <div class="photo-board">
+
+          <div class="polaroid small-photo photo-a">
+
+            <div class="photo-wrapper">
+
+              <img
+                src="gerbera.jpg"
+                alt="Memory"
+              >
+
+            </div>
+
+            <p>
+              you + me
+            </p>
+
+          </div>
+
+
+          <div class="polaroid small-photo photo-b">
+
+            <div class="photo-wrapper">
+
+              <img
+                src="tulip.jpg"
+                alt="Memory"
+              >
+
+            </div>
+
+            <p>
+              little happiness
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="tape tape-two"></div>
+        <div class="tape tape-three"></div>
+
+
+        <div class="center-note">
+
+          <span>
+            ♡
+          </span>
+
+          <p>
+            "I hope we never stop
+            making silly memories."
+          </p>
+
+        </div>
+
+
+        <div class="scribble-bottom">
+          ☆ ☆ ☆ ☆ ☆
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PAGE 4 -->
+    <section class="page" data-page="3">
+
+      <div class="page-number">
+        04 / 06
+      </div>
+
+      <div class="page-content">
+
+        <p class="hand-small">
+          page four · one month
+        </p>
+
+        <h2>
+          30-ish days<br>
+          <span>with you</span>
+        </h2>
+
+
+        <div class="calendar-doodle">
+
+          <div class="calendar-top">
+            AUGUST
+          </div>
+
+          <div class="calendar-number">
+            26
+          </div>
+
+          <div class="calendar-note">
+            <span>♡</span>
+            the day our story began
+          </div>
+
+        </div>
+
+
+        <div class="month-text">
+
+          <p>
+            Satu bulan.
+          </p>
+
+          <p>
+            Kedengarannya mungkin masih sebentar.
+            Tapi dalam satu bulan ini ada banyak
+            cerita kecil yang berhasil menjadi bagian
+            dari hari-hari adek.
+          </p>
+
+          <p>
+            adek belajar mengenal mas.
+            adek belajar bagaimana caranya
+            memahami mas.
+          </p>
+
+          <p class="blue-highlight">
+            Dan adek mau terus belajar.
+          </p>
+
+        </div>
+
+
+        <div class="tiny-doodle">
+          <span>☾</span>
+          <span>♡</span>
+          <span>✦</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PAGE 5 -->
+    <section class="page" data-page="4">
+
+      <div class="page-number">
+        05 / 06
+      </div>
+
+      <div class="page-content letter-page">
+
+        <p class="hand-small">
+          page five · a letter
+        </p>
+
+        <h2>
+          Dear<br>
+          <span>you,</span>
+        </h2>
+
+
+        <div class="letter-paper">
+
+          <p>
+            Happy first month, sayang. ♡
+          </p>
+
+          <p>
+            hari ini resmi kita satu bulan ya? jujur masih rada kaget ternyata kita bisa bertahan 30 hari, walaupun emang ada lika-liku nya. 
+            walaupun memang ga selalu berjalan mulus, memang banyak problem nya 
+            tapi adek beneran seneng karena kita berdua gaada egois buat ninggalin satu sama lain. masih bertahan, even udah banyak banget masalah yang ada di 30 hari pertama, 
+            we’re still here, still choosing each other, and that alone already means so much to me.
+          </p>
+
+          <p>
+            adek sadar kita masih jauh dari kata sempurna, masih banyak hal yang harus kita pelajari bareng. 
+            kadang kita salah paham, kadang kita sama-sama keras kepala, 
+            kadang kita capek dan hampir nyerah. but somehow, we always find our way back to each other. dan itu yang bikin adek percaya kalau hubungan ini bukan cuma soal rasa, tapi juga soal usaha.
+            i don’t need something perfect, adek cuma butuh mas yang tetap milih buat stay. karena buat adek, 
+            cinta itu bukan tentang ga pernah berantem, tapi tentang gimana kita tetap genggam satu sama lain walaupun lagi ga baik-baik aja.
+          </p>
+
+          <p>
+            terima kasih ya sudah bertahan sejauh ini, sudah sabar sama adek, sama sifat adek, 
+            sama overthinking adek, sama semua kurangnya adek. thank you for not giving up on us. 
+            adek harap bulan-bulan selanjutnya kita bisa jadi lebih baik lagi, lebih dewasa, 
+            lebih ngerti satu sama lain tanpa harus selalu dijelasin. 
+            pelan-pelan kita perbaiki apa yang kurang, kita jaga apa yang sudah baik.
+          </p>
+
+          <p>
+           dan kalau suatu hari nanti semuanya terasa berat, 
+           adek harap kita ga lupa cara buat kembali, cara buat saling rangkul lagi. 
+           because no matter what happens, i still want it to be you.
+          </p>
+
+          <p>
+            last, adek berharap kita tidak berhenti
+            memilih satu sama lain hanya karena
+            satu hari yang sulit.
+          </p>
+
+          <p class="letter-highlight">
+            I want to keep writing this story with you.
+          </p>
+
+          <p>
+            Jadi kalau halaman pertama kita sudah
+            selesai...
+          </p>
+
+          <p>
+            bolehkah kita isi halaman berikutnya
+            bersama?
+          </p>
+
+          <p class="signature">
+            with love,<br>
+            <span>me ♡</span>
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PAGE 6 -->
+    <section class="page final-page" data-page="5">
+
+      <div class="page-number">
+        06 / 06
+      </div>
+
+      <div class="page-content final-content">
+
+        <p class="hand-small">
+          last page · for now
+        </p>
+
+
+        <div class="big-heart">
+          ♡
+        </div>
+
+
+        <h2>
+          Will you stay<br>
+          <span>for the next pages?</span>
+        </h2>
+
+
+        <p class="final-text">
+          Karena adek masih punya banyak cerita
+          yang ingin adek tulis bersama mas.
+        </p>
+
+
+        <button
+          class="yes-btn"
+          onclick="finishStory()"
+        >
+          yes, let's ♡
+        </button>
+
+
+        <div
+          id="finalMessage"
+          class="final-message"
+        >
+
+          <div class="heart-burst">
+            ♡ ♡ ♡
+          </div>
+
+          <p>
+            then let's make<br>
+            many more little memories.
+          </p>
+
+          <span>
+            happy first month ♡
+          </span>
+
+        </div>
+
+
+        <div class="signature-bottom">
+          <span>✎</span>
+          next page: us
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- NAVIGATION -->
+
+    <div class="navigation">
+
+      <button
+        id="prevBtn"
+        onclick="previousPage()"
+      >
+        ← prev
+      </button>
+
+
+      <div class="page-dots">
+
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+
+      </div>
+
+
+      <button
+        id="nextBtn"
+        onclick="nextPage()"
+      >
+        next →
+      </button>
+
+    </div>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+```
